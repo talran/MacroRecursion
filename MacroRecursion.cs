@@ -22,7 +22,7 @@ namespace MacroChain {
         [PluginService] public static ClientState ClientState { get; private set; } = null!;
         [PluginService] public static ChatGui Chat { get; private set; } = null!;
 
-        public string Name => "Macro Chain True";
+        public string Name => "Macro Recursion";
 
         private delegate void MacroCallDelegate(RaptureShellModule* raptureShellModule, RaptureMacroModule.Macro* macro);
 
