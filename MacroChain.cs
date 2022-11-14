@@ -22,7 +22,7 @@ namespace MacroChain {
         [PluginService] public static ClientState ClientState { get; private set; } = null!;
         [PluginService] public static ChatGui Chat { get; private set; } = null!;
 
-        public string Name => "Macro Chain";
+        public string Name => "Macro Chain True";
 
         private delegate void MacroCallDelegate(RaptureShellModule* raptureShellModule, RaptureMacroModule.Macro* macro);
 
@@ -37,7 +37,7 @@ namespace MacroChain {
                 ShowInHelp = true
             });
             CommandManager.AddHandler("/runmacro", new Dalamud.Game.Command.CommandInfo(OnRunMacroCommand) {
-                HelpMessage = "Execute a macro (Not usable inside macros). - /runmacro ## [individual|shared].",
+                HelpMessage = "Execute a macro (usable inside macros). - /runmacro ## [individual|shared].",
                 ShowInHelp = true
             });
 
@@ -128,10 +128,10 @@ namespace MacroChain {
 
         public void OnRunMacroCommand(string command, string args) {
             try {
-                if (lastExecutedMacro != null) {
-                    Chat.PrintError("/runmacro is not usable while macros are running. Please use /nextmacro");
-                    return;
-                }
+                //if (lastExecutedMacro != null) {
+                //    Chat.PrintError("/runmacro is not usable while macros are running. Please use /nextmacro");
+                //    return;
+                //}
                 var argSplit = args.Split(' ');
                 var num = byte.Parse(argSplit[0]);
 
